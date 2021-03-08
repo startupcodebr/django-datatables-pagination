@@ -48,7 +48,7 @@ class DtPaginatedListView(ListView):
 
         for obj in queryset_page:
             html = render_to_string(
-                self.template, context={
+                self.template_name, context={
                     'object': obj,
                     'user': self.request.user,
                     'perms': PermWrapper(self.request.user)})
