@@ -27,7 +27,7 @@ def filter_by_search_term(queryset, fields, search_term):
 
 
 class DtPaginatedListView(ListView):
-    tr_template = None
+    template = None
     filtered_fields = []
 
     def post(self, *args, **kwargs):
@@ -48,7 +48,7 @@ class DtPaginatedListView(ListView):
 
         for obj in queryset_page:
             html = render_to_string(
-                self.tr_template, context={
+                self.template, context={
                     'object': obj,
                     'user': self.request.user,
                     'perms': PermWrapper(self.request.user)})
