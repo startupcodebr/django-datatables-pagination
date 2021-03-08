@@ -27,7 +27,7 @@ def filter_by_search_term(queryset, fields, search_term):
 
 
 class DtPaginatedListView(ListView):
-    template = None
+    template_name = None
     filtered_fields = []
 
     def post(self, *args, **kwargs):
